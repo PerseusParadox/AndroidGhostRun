@@ -5,30 +5,78 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     int numOfLives = 3;
-    Rigidbody rigidbody;
-    float newposition;
+    Rigidbody rb;
+    public GameObject particleSys;
+    public float smooth;
+    public Camera camera;
+    Vector3 touchposition;
+    AudioSource audioSource;
+    [SerializeField]
+    GameObject deathSound;
     void Start () {
-        rigidbody = GetComponent<Rigidbody> ();
+        rb = GetComponent<Rigidbody> ();
+        audioSource = GetComponent<AudioSource> ();
+
     }
 
     void Update () {
-        
-        if ( Input.GetKeyDown (KeyCode.W) ) {
-            newposition = transform.position.y + 15;
-
-        }
-        while ( transform.position.y < newposition ) {
-            if ( transform.position.y < 30 ) {
-                transform.position = Vector3.Lerp (transform.position , transform.position + new Vector3 (transform.position.x , transform.position.y + 15 , 0) , 0.125f * Time.deltaTime);
-            }
-        }
+        Movement ();
     }
     void Movement () {
-        
+#if UNITY_STANDALONE
+        if ( transform.position.y < 30 && Input.GetKeyDown (KeyCode.W) ) {
+            transform.position = Vector3.Lerp (transform.position , transform.position + new Vector3 (0 , 15 , 0) , 1);
+
+        } else if ( transform.position.y > 0 && Input.GetKeyDown (KeyCode.S) ) {
+            transform.position = Vector3.Lerp (transform.position , transform.position - new Vector3 (0 , 15 , 0) , 1);
+
+        }
+#else
+        if ( Input.touchCount > 0 ) {
+
+
+            /*if ( transform.position.y < 30 && Input.touchCount > 0 ) {
+                Touch touch = Input.touches[9];
+
+                transform.position = Vector3.Lerp (transform.position , transform.position + new Vector3 (0 , 15 , 0) , 1);
+
+            } else if ( transform.position.y > 0 && Input.GetKeyDown (KeyCode.S) ) {
+                transform.position = Vector3.Lerp (transform.position , transform.position - new Vector3 (0 , 15 , 0) , 1);
+
+            }*/
+            touchposition = ( Input.touches[0].position );
+            if ( Input.touches[0].phase == TouchPhase.Began ) {
+                if ( touchposition.y > 720 ) {
+                    if ( transform.position.y < 30 ) {
+                        transform.position = Vector3.Lerp (transform.position , transform.position + new Vector3 (0 , 15 , 0) , 1);
+
+                    }
+
+                } else if ( touchposition.y < 720 ) {
+                    if ( transform.position.y > 0 ) {
+                        transform.position = Vector3.Lerp (transform.position , transform.position - new Vector3 (0 , 15 , 0) , 1);
+
+                    }
+                }
+
+
+
+            }
+
+            Debug.Log (touchposition.y);
+
+        }
+
     }
-
-    void LoseLife () {
-
+#endif
+    public void LoseLife () {
+        Instantiate (particleSys , transform.position , Quaternion.identity);
+        numOfLives--;
+        audioSource.Play ();
+        if ( numOfLives < 1 ) {
+            Instantiate (deathSound , transform.position , Quaternion.identity);
+            Destroy (this.gameObject);
+        }
 
     }
 }

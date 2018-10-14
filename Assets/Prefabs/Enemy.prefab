@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 114781757077829558}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1978410476367828}
   m_LocalRotation: {x: -0, y: 0.99813485, z: -0, w: -0.061048422}
-  m_LocalPosition: {x: 92.009995, y: 0, z: 0}
+  m_LocalPosition: {x: -55, y: 0, z: 0}
   m_LocalScale: {x: 16, y: 16, z: 16}
   m_Children:
   - {fileID: 4327480589165598}
@@ -319,7 +319,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ba48ef0d70766a4c93c101bba882070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
+  particleSys: {fileID: 1006522226964278, guid: 278f50879b1a7ff42a7278b2f3b7d00c,
+    type: 2}
+  deathSound: {fileID: 1044238982195144, guid: 542d87655c5347944bc22a3354aa2e8f, type: 2}
+  speed: 75
 --- !u!135 &135217712348354582
 SphereCollider:
   m_ObjectHideFlags: 1
