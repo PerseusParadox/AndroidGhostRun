@@ -19,18 +19,17 @@ public class Enemy : MonoBehaviour {
 
 
     }
-    private void OnTriggerEnter (Collider other) {
+    private void OnTriggerEnter (UnityEngine.Collider other) {
         if ( other.tag == "Player" ) {
             Player player = other.GetComponent<Player> ();
-            if ( player != null ) {
-                player.LoseLife ();
-            }
+            player.LoseLife ();
             Die ();
+
         }
     }
     void Die () {
         Instantiate (particleSys , transform.position , Quaternion.identity);
-        Instantiate (deathSound, transform.position, Quaternion.identity);
+        Instantiate (deathSound , transform.position , Quaternion.identity);
         Destroy (this.gameObject);
     }
 }

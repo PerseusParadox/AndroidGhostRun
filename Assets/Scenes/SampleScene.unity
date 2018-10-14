@@ -537,8 +537,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b5753cfc8a911479fb099e28f8664b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: {fileID: 0}
+  Score: {fileID: 1557122705}
   score: 0
+  player: {fileID: 1712558624}
 --- !u!4 &1545188727 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4863578220124572, guid: c88c07707fcf14947b2196401529c1e0,
@@ -619,6 +620,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1557122703}
   m_CullTransparentMesh: 0
+--- !u!1 &1712558624 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1693775806041290, guid: c88c07707fcf14947b2196401529c1e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 674416819}
 --- !u!1001 &1966628130
 Prefab:
   m_ObjectHideFlags: 0

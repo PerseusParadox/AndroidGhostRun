@@ -86,8 +86,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4076955284367926}
   - component: {fileID: 95996943525479890}
-  - component: {fileID: 135217712348354582}
   - component: {fileID: 114781757077829558}
+  - component: {fileID: 135375955426611002}
+  - component: {fileID: 65136572733083706}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -290,6 +291,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1181153099091592}
   m_Mesh: {fileID: 4300004, guid: f2e8965f893d2a343b0c87ff222ac68c, type: 3}
+--- !u!65 &65136572733083706
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1978410476367828}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.37, y: 0.37, z: 0.37}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95996943525479890
 Animator:
   serializedVersion: 3
@@ -323,7 +336,7 @@ MonoBehaviour:
     type: 2}
   deathSound: {fileID: 1044238982195144, guid: 542d87655c5347944bc22a3354aa2e8f, type: 2}
   speed: 75
---- !u!135 &135217712348354582
+--- !u!135 &135375955426611002
 SphereCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -333,5 +346,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.29
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
