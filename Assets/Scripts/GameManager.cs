@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour {
     public bool gameOver = false;
     public Player player;
     void Start () {
-        Player player = GetComponent<Player> ();
+
     }
 
     void Update () {

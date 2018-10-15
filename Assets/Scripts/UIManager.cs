@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour {
     public GameManager gameManager;
     void Start () {
         score = 0;
-        gameManager = GameObject.Find ("GameManager").GetComponent<GameManager> ();
+
 
     }
 

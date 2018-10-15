@@ -10,62 +10,40 @@ public class Player : MonoBehaviour {
     AudioSource audioSource;
     [SerializeField]
     GameObject deathSound;
+    Vector3 newPos;
     public bool dead = false;
     void Start () {
         audioSource = GetComponent<AudioSource> ();
+        newPos = transform.position;
 
     }
 
     void Update () {
         Movement ();
-
+        Debug.Log (newPos.magnitude);
     }
     void Movement () {
 
         if ( Input.touchCount > 0 ) {
 
-            /*
             touchposition = ( Input.touches[0].position );
-            if ( touchposition.y > 720 ) {
+            if ( newPos.magnitude < 28 && touchposition.y > 720 ) {
                 if ( Input.touches[0].phase == TouchPhase.Began ) {
-
-                    if ( transform.position.y < 30 && touchposition.y > 720 ) {
-                        transform.position = Vector3.Lerp (transform.position , transform.position + new Vector3 (0 , 15 , 0) , 1);
-
-
-
-                    }
-
-                } else {
-                    if ( transform.position.y > 0 ) {
-                        transform.position = Vector3.Lerp (transform.position , transform.position - new Vector3 (0 , 15 , 0) , 1);
-                        Debug.Log ("tHIS WORKS!");
-
-
-                    }
-
-
-
+                    newPos = transform.position + new Vector3 (0 , 15 , 0);
                 }
 
-
-            }
-
-            Debug.Log (touchposition.y);
-            */
-            touchposition = ( Input.touches[0].position );
-            if ( transform.position.y < 30 && touchposition.y > 720 ) {
+            } else if ( newPos.magnitude > 2 && touchposition.y < 720 ) {
                 if ( Input.touches[0].phase == TouchPhase.Began ) {
-                    transform.position = Vector3.Lerp (transform.position , transform.position + new Vector3 (0 , 15 , 0) , 1);
-
-                }
-
-            } else if ( transform.position.y > 0 && touchposition.y < 720 ) {
-                if ( Input.touches[0].phase == TouchPhase.Began ) {
-                    transform.position = Vector3.Lerp (transform.position , transform.position - new Vector3 (0 , 15 , 0) , 1);
+                    newPos = transform.position - new Vector3 (0 , 15 , 0);
 
                 }
             }
+        }
+        transform.position = Vector3.Lerp (transform.position , newPos , smooth * Time.deltaTime);
+        if ( transform.position.y > 30 ) {
+            transform.position = new Vector3 (0 , 30 , 0);
+        } else if ( transform.position.y < 0 ) {
+            transform.position = Vector3.zero;
         }
 
     }
