@@ -5,16 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     int numOfLives = 3;
-    Rigidbody rb;
     public GameObject particleSys;
     public float smooth;
-    public Camera camera;
     Vector3 touchposition;
     AudioSource audioSource;
     [SerializeField]
     GameObject deathSound;
     void Start () {
-        rb = GetComponent<Rigidbody> ();
         audioSource = GetComponent<AudioSource> ();
 
     }
