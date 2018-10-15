@@ -23,8 +23,9 @@ public class Enemy : MonoBehaviour {
         if ( other.tag == "Player" ) {
             Player player = other.GetComponent<Player> ();
             player.LoseLife ();
-            Die ();
-
+            if ( player.dead ) {
+                Die ();
+            }
         }
     }
     void Die () {

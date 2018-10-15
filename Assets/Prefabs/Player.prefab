@@ -720,8 +720,8 @@ MonoBehaviour:
   particleSys: {fileID: 1362549475253808, guid: 714d81ca0e9ee4247907477600763c83,
     type: 2}
   smooth: 0
-  camera: {fileID: 0}
   deathSound: {fileID: 1454438264729936, guid: 7b4e597d08f494d40bc39347f0ce4578, type: 2}
+  dead: 0
 --- !u!136 &136178631986346458
 CapsuleCollider:
   m_ObjectHideFlags: 1
