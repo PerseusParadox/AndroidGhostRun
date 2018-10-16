@@ -11,6 +11,8 @@ public class Player : MonoBehaviour {
     [SerializeField]
     GameObject deathSound;
     Vector3 newPos;
+    public bool Invincible = false;
+    
     public bool dead = false;
     void Start () {
         audioSource = GetComponent<AudioSource> ();
@@ -50,7 +52,12 @@ public class Player : MonoBehaviour {
 
     public void LoseLife () {
         Instantiate (particleSys , transform.position , Quaternion.identity);
-        numOfLives--;
+        if ( Invincible == true ) {
+
+        } else {
+            numOfLives--;
+
+        }
         audioSource.Play ();
         if ( numOfLives < 1 ) {
             Instantiate (deathSound , transform.position , Quaternion.identity);
