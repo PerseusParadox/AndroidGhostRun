@@ -6,7 +6,9 @@ public class Collectable : MonoBehaviour {
     public float speed;
     public GameObject particles;
     public GameObject sound;
+    UIManager uimanager;
     void Start () {
+        uimanager = GameObject.Find ("Canvas").GetComponent<UIManager> ();
     }
 
     void Update () {
@@ -16,11 +18,12 @@ public class Collectable : MonoBehaviour {
         }
     }
     private void OnTriggerEnter (Collider other) {
+
+
         if ( other.tag == "Player" ) {
-            Debug.Log ("Collider works");
             Instantiate (particles , transform.position , Quaternion.identity);
             Instantiate (sound , transform.position , Quaternion.identity);
-
+            uimanager.AddScore ();
             Destroy (this.gameObject);
         }
     }

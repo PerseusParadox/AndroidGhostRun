@@ -22,7 +22,6 @@ public class Player : MonoBehaviour {
 
     void Update () {
         Movement ();
-        Debug.Log (newPos.magnitude);
     }
     void Movement () {
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4503088, g: 0.4980051, b: 0.5628194, a: 1}
+  m_IndirectSpecularColor: {r: 0.45030904, g: 0.49800563, b: 0.5628203, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -330,6 +330,24 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114640555770328452, guid: c88c07707fcf14947b2196401529c1e0,
+        type: 2}
+      propertyPath: Invincible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198489357693944692, guid: c88c07707fcf14947b2196401529c1e0,
+        type: 2}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693311841971944, guid: c88c07707fcf14947b2196401529c1e0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095869102624292, guid: c88c07707fcf14947b2196401529c1e0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c88c07707fcf14947b2196401529c1e0, type: 2}
   m_IsPrefabAsset: 0
@@ -590,6 +608,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114083121279690988, guid: c74fd56e0d715cc4f936546ff95ca1d3,
+        type: 2}
+      propertyPath: frequency
+      value: 0.12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c74fd56e0d715cc4f936546ff95ca1d3, type: 2}
   m_IsPrefabAsset: 0
@@ -653,6 +676,10 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1712558626}
+    - target: {fileID: 1241137647068972, guid: c66618d5bd6df9f4dbe7ec9460f4c09d, type: 2}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c66618d5bd6df9f4dbe7ec9460f4c09d, type: 2}
   m_IsPrefabAsset: 0
