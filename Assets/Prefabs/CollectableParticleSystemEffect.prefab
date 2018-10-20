@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4551735710933758}
   - component: {fileID: 198690768140725610}
   - component: {fileID: 199098542582334742}
+  - component: {fileID: 114409453875727850}
   m_Layer: 0
   m_Name: CollectableParticleSystemEffect
   m_TagString: Untagged
@@ -41,6 +42,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114409453875727850
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1182070901507378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64b11377eb6bb140b09dbef7f76f586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secs: 2
 --- !u!198 &198690768140725610
 ParticleSystem:
   m_ObjectHideFlags: 1

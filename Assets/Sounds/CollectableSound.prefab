@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4561302247064534}
   - component: {fileID: 82742316114970762}
+  - component: {fileID: 114113594495148660}
   m_Layer: 0
   m_Name: CollectableSound
   m_TagString: Untagged
@@ -135,3 +136,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114113594495148660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1207875125101892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64b11377eb6bb140b09dbef7f76f586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secs: 2

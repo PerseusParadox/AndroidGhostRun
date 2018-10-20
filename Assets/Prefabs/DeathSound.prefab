@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4790078877681988}
   - component: {fileID: 82655159681422816}
+  - component: {fileID: 114738451509017046}
   m_Layer: 0
   m_Name: DeathSound
   m_TagString: Untagged
@@ -135,3 +136,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114738451509017046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1454438264729936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64b11377eb6bb140b09dbef7f76f586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secs: 2
